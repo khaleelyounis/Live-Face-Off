@@ -15,11 +15,20 @@ const LobbySchema = new Schema({
     sessionId: {
         type: String
     },
-    players: {
+    activePlayers: {
+        type: Array
+    },
+    finishedPlayers: {
+        type: Array
+    },
+    ids: {
         type: Array
     },
     maxPlayer: {
         type: Number
+    },
+    deal52Games: {
+        type: Array
     },
     date: {
         type: Date,

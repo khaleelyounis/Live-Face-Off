@@ -3,11 +3,16 @@ import GameBoard from './gameBoard';
 import Chat from './chat';
 import TokBox from './openTok';
 import '../assets/css/gamePage.css';
+import { connect } from 'react-redux';
+import { enterRoom } from "../actions";
 
 class GamePage extends Component {
     constructor(props) {
         super(props);
-        this.roomKeyId = sessionStorage.getItem('roomKey');
+    }
+
+    componentDidMount() {
+        this.props.enterRoom();
     }
 
     render() {
@@ -20,14 +25,16 @@ class GamePage extends Component {
                     </div>
                 </div>
                 <div className="row gameCards">
-                    <div className="col s3 camChat">
+                    <div className="col l3 camChat hide-on-med-and-down">
                         <Chat />
                     </div>
-                    <GameBoard />
+                    <div className="col l9 s12">
+                        <GameBoard />
+                    </div>
                 </div >
             </div>
         )
     }
 }
 
-export default GamePage;
+export default connect(null, { enterRoom: enterRoom })(GamePage);

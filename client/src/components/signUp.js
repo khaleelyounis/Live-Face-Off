@@ -21,7 +21,6 @@ class SignUp extends Component {
 
         axios.post('/users/register', formValues)
             .then(res => {
-                console.log("this is the response", res);
                 if (res.data.hasOwnProperty('pathname')) {
                     const { origin } = location;
                     location.href = `${origin}${res.data.pathname}`;
@@ -37,7 +36,7 @@ class SignUp extends Component {
     }
 
     render() {
-        const { handleSubmit } = this.props; //this handleSubmit is from redux-form. HOC and wraps around handleSubmitForm
+        const { handleSubmit } = this.props; //'handleSubmit' is from redux-form. HOC and wraps around our handleSubmitForm method.
         const { handleSubmitForm } = this;
         const { messages } = this.state;
 
@@ -46,7 +45,7 @@ class SignUp extends Component {
                 <DisplayMessages messages={messages} />
                 <div className="col s6 l6 fullform contentBorder z-depth-5">
                     <div className="row s6">
-                        <form className="col s10 center-align push-s1 " onSubmit={handleSubmit(handleSubmitForm)}>
+                        <form className="col s10 center-align push-s1" onSubmit={handleSubmit(handleSubmitForm)}>
                             <div className='col s12'>
                                 <h4 className="signUpText">Sign Up</h4>
                             </div>
@@ -69,6 +68,7 @@ class SignUp extends Component {
     }
 }
 
+//Outputs an error message on each input for the form validation.
 function validate(values) {
     const error = {};
 

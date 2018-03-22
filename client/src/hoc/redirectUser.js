@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
+//HOC which redirects users to lobby when they login.
 export default function(WrappedComponent, location='/'){
     class Redirect extends Component {
 

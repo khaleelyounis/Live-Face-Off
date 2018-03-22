@@ -12,22 +12,36 @@
     height: 100%;
 }
 
-nav.navBar.teal {
-    min-height: 7.5vh;
-    max-height: 7.5vh;
-}
-
 a.brand-logo.left {
     height: 100%;
-    margin-left: 5%;
+    margin-left: 4.5%;
 }
+
 .nav-wrapper {
     height: 100%;
 }
 
 .navImg {
     position: absolute;
-    left: -28%;
-    top: 7%;
+    top: 10%;
+    left: -26%;
     width: 26%;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1439px) {
+    a.brand-logo.left {
+        margin-left: 3.5%;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    a.brand-logo.left {
+        margin-left: 3.2%;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    a.brand-logo.left {
+        margin-left: 3%;
+    }
 }

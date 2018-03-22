@@ -11,7 +11,10 @@ class GameInfoModal extends Component {
         }
     }
 
+    //switches btn links depending if the user is coming from the lobby or clicking game info.
     switchBtn(redirect) {
+        let body = document.getElementsByTagName('BODY')[0];
+        body.style.overflow = 'visible';
         if (this.props.fromLobby === true) {
             return <Link to={redirect} className='btn teal accent-4 waves-effect waves-light'>Join Room</Link>
         } else {
@@ -39,6 +42,7 @@ class GameInfoModal extends Component {
         let gameName = null,
             contentHeight = null,
             redirect = null;
+
         if (this.props.gameType === 'webcam') {
             gameName = 'Webcam';
             redirect = '/camGame';
@@ -54,7 +58,7 @@ class GameInfoModal extends Component {
         };
 
         return (
-            <div className="gameInfoModal" style={displayModal}>
+            <div className='gameInfoModal' style={displayModal}>
                 <div className={`gameInfoContent contentBorder ${contentHeight}`}>
                     <div className='row'>
                         <div className='col s12'>

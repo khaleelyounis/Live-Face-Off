@@ -32,29 +32,46 @@
 }
 
 .webcamModalSize {
-    height: 52%;
+    height: 62%;
+    width: 42%;
 }
 
 .dealModalSize {
-    height: 65%;
+    height: 80%;
+    width: 55%;
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (min-width: 920px) {
+    .dealModalSize {
+        height: 77%;
+        width: 52%;
+    }
+}
+
+@media screen and (min-width: 1020px) {
+    .dealModalSize {
+        height: 74%;
+        width: 46%;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .dealModalSize {
+        height: 68%;
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1100px) {
     .webcamModalSize {
-        height: 60%;
+        height: 58%;
+        width: 42%;
     }
 }
 
-@media screen and (max-width: 1400px) {
-    .dealModalSize {
-        height: 70%;
-        width: 45%;
-    }
-}
-
-@media screen and (max-width: 1100px) {
-    .dealModalSize {
-        height: 75%;
-        width: 50%;
+@media screen and (min-width: 1200px) {
+    .webcamModalSize {
+        height: 58%;
+        width: 35%;
     }
 }

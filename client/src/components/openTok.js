@@ -106,13 +106,7 @@ class TokBox extends Component {
             )
         }
         return (
-            <div className="row col s12 fullscreen">
-                {/* <div>Session Status: {connection}</div>
-                {error ? (
-                    <div className="error">
-                        <strong>Error:</strong> {error}
-                    </div>
-                ) : null} */}
+            <div className="row col s12 fullscreen" id='fullScreen'>
                 <OTSession
                     apiKey={apiKey}
                     sessionId={sessionId}
@@ -135,11 +129,6 @@ class TokBox extends Component {
                         eventHandlers={this.publisherEventHandlers}
                     />
                 </OTSession>
-
-                {/* <button className="waves-effect waves-light btn blue-grey darken-2" id="camBtn" onClick={this.toggleVideo}>
-                    {publishVideo ? 'Disable' : 'Enable'} Video
-
-                </button> */}
             </div >
         );
     }

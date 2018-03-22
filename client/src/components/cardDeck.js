@@ -58,7 +58,9 @@ class CardDeck extends Component() {
     constructor(props) {
         super(props);
     }
-
+    componentWillMount() {
+        this.deck();
+    }
     card(value, name, suit, image) {
         this.value = value;
         this.name = name;

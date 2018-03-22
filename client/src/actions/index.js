@@ -5,14 +5,13 @@ export function signIn() {
     return async dispatch => {
         try {
             const resp = await axios.get('/auth/verify');
-            console.log('axiossss sign ined', resp);
 
             if (resp.data.isLoggedIn) {
                 localStorage.setItem('token', resp.data.token);
                 dispatch({ type: types.SIGN_IN })
             }
         } catch (err) {
-            console.log('signinerror', err.message)
+            console.log('Sign in error:', err.message)
         }
     }
 }
@@ -20,14 +19,31 @@ export function signIn() {
 export function signOut() {
     return async dispatch => {
         try {
-            const resp = await axios.get('/auth/logout');
-            console.log('axiossss signed out', resp);
-
+            await axios.get('/auth/logout');
             localStorage.removeItem('token');
             sessionStorage.clear();
             dispatch({ type: types.SIGN_OUT })
         } catch (err) {
-            console.log('signOuterror', err.message)
+            console.log('Sign out error:', err.message)
         }
+    }
+}
+
+export function setFinalScore(finalScore) {
+    return {
+        payload: finalScore,
+        type: types.SET_FINAL_SCORE
+    }
+}
+
+export function enterRoom() {
+    return {
+        type: types.ENTER_ROOM
+    }
+}
+
+export function leaveRoom() {
+    return {
+        type: types.LEAVE_ROOM
     }
 }

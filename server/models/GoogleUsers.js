@@ -17,6 +17,21 @@ const GoogleUserSchema = new Schema({
     lastName: {
         type: String
     },
+    gamesPlayed: {
+        type: Number,
+        default: 0
+    },
+    identifier: {
+        type: Object
+    },
+    wins: {
+        type: Number,
+        default: 0
+    },
+    deal52LowestScore: {
+        type: Number,
+        default: 50
+    },
     image: {
         type: String
     }

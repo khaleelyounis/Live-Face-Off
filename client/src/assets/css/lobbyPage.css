@@ -7,11 +7,30 @@
     display: inline-block;
 }
 
-.profileCard, .createGame {
-    margin-top: 3%;
-    height: 40vh;
+.lobbyText{
+    color: rgb(255, 123, 0);
 }
 
+.profileCard, .createGame {
+    margin-top: 3%;
+    height: 300px
+}
+
+.topCards{
+    margin-top: 3%;
+}
+
+#playerCard{
+    padding-left: 0;
+}
+
+#joinCard{
+    padding-right: 0;
+}
+
+#createCard{
+    padding:0;
+}
 .profileCard {
     background-color: ghostwhite;
     display: flex;
@@ -34,7 +53,7 @@
 }
 
 .joinTitle {
-    margin-top: 0;
+    margin-top: -25px;
 }
 
 .tableMargin {
@@ -43,6 +62,7 @@
 
 .lobbyHeaders {
     margin-top: 1.8rem;
+    color: rgb(255, 123, 0);
 }
 
 .dropdownContent {
@@ -74,7 +94,8 @@
 }
 
 .leaderBoard{
-    margin-bottom: 0;
+    margin-bottom: 2%;
+    height: 660px;
 }
 
 .dropdown a:hover {background-color: #ddd}
@@ -92,7 +113,13 @@
 }
 
 .userIcon {
-    font-size: 6vmin;
+    font-size: 50px;
+    color: rgba(0,181,161,1);
+}
+
+.lobbyUsername {
+    margin-top: 5%;
+    color: rgb(255, 123, 0);
 }
 
 .userIconPos {
