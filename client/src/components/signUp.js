@@ -21,7 +21,6 @@ class SignUp extends Component {
 
         axios.post('/users/register', formValues)
             .then(res => {
-                console.log("this is the response", res);
                 if (res.data.hasOwnProperty('pathname')) {
                     const { origin } = location;
                     location.href = `${origin}${res.data.pathname}`;
@@ -37,7 +36,7 @@ class SignUp extends Component {
     }
 
     render() {
-        const { handleSubmit } = this.props; //this handleSubmit is from redux-form. HOC and wraps around handleSubmitForm
+        const { handleSubmit } = this.props; //'handleSubmit' is from redux-form. HOC and wraps around our handleSubmitForm method.
         const { handleSubmitForm } = this;
         const { messages } = this.state;
 
@@ -46,9 +45,9 @@ class SignUp extends Component {
                 <DisplayMessages messages={messages} />
                 <div className="col s6 l6 fullform contentBorder z-depth-5">
                     <div className="row s6">
-                        <form className="col s10 center-align push-s1 " onSubmit={handleSubmit(handleSubmitForm)}>
+                        <form className="col s10 center-align push-s1" onSubmit={handleSubmit(handleSubmitForm)}>
                             <div className='col s12'>
-                                <h4>Sign Up</h4>
+                                <h4 className="signUpText">Sign Up</h4>
                             </div>
                             <Field component={formInput} id="signUpFirstName" icon='mood' name='firstName' placeholder='First Name' type='text' />
                             <Field component={formInput} id="signUpLastName" icon='mood' name='lastName' placeholder='Last Name' type='text' />
@@ -57,8 +56,8 @@ class SignUp extends Component {
                             <Field component={formInput} id="signUpPassword2" icon='work' name='password2' placeholder='Confirm Password' type='password' />
                             <div className="row rowlines">
                                 <div className='col s12 center-align'>
-                                    <Link className='logInBtn waves-effect waves-light btn red accent-4' to='/login'>Go Back</Link>
-                                    <button id='submitButton' type="submit" className='signUpBtn waves-effect waves-light btn green accent-4'>Sign Up</button>
+                                    <Link className='logInBtn waves-effect waves-light btn red accent-4' to='/login'>Back</Link>
+                                    <button id='submitButton' type="submit" className='signUpBtn waves-effect waves-light btn teal accent-4'>Sign Up</button>
                                 </div>
                             </div>
                         </form>
@@ -69,6 +68,7 @@ class SignUp extends Component {
     }
 }
 
+//Outputs an error message on each input for the form validation.
 function validate(values) {
     const error = {};
 

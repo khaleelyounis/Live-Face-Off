@@ -20,6 +20,7 @@ class LoginPage extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    //Submits login information with axios
     handleSubmit(event) {
         document.getElementById('localLoginBtn').disabled = true;
         const { form } = this.state;
@@ -27,7 +28,6 @@ class LoginPage extends Component {
 
         axios.post('/users/login', form)
             .then(res => {
-                console.log("this is the response", res);
                 if (res.data.hasOwnProperty('messages')) {
                     this.setState({
                         messages: res.data.messages
@@ -36,12 +36,12 @@ class LoginPage extends Component {
                 } else {
                     this.props.signIn();
                 }
-
-
             }).catch(error => {
-                console.log('catcherrr', error)
+                console.log('submission error:', error)
             });
     }
+
+    //Updates the react state for form inputs.
     handleInput(event) {
         const { value, name } = event.target;
         const { form } = this.state;
@@ -50,16 +50,18 @@ class LoginPage extends Component {
             form: { ...form }
         });
     }
+
     render() {
         const { handleInput, handleSubmit } = this;
         const { email, password, messages } = this.state;
+
         return (
             <div className='container loginContainer'>
                 <DisplayMessages messages={messages} />
                 <div className='signInArea contentBorder z-depth-5'>
                     <div className='row'>
                         <div className="col s12 homeTitle center-align">
-                            <h2>Live Face Off</h2>
+                            <h2 className="signInText">Live Face Off</h2>
                         </div>
                     </div>
                     <div className="row">
@@ -76,24 +78,22 @@ class LoginPage extends Component {
                                     </div>
                                 </div>
                             </div>
-
                             <div className="row">
                                 <div className='buttonArea col s12'>
-                                    <button id='localLoginBtn' type="submit" className='logInBtn waves-effect waves-light btn green accent-4'>Log In</button>
+                                    <button id='localLoginBtn' type="submit" className='logInBtn waves-effect waves-light btn teal accent-4'>Log In</button>
                                 </div>
                             </div>
-
                             <div className="row googleFB">
                                 <div className='buttonAreaTwo col s12 center-align'>
                                     <h5 className='center-align'>Or direct login with</h5>
                                     <br />
                                     <a className="facebookBtn waves-effect waves-light btn light-blue accent-4" href="/auth/facebook">Facebook</a>
-                                    <a className="googleBtn waves-effect waves-light btn deep-orange accent-4" href="/auth/google">Google</a>
+                                    <a className="googleBtn waves-effect waves-light btn deep-orange accent-3" href="/auth/google">Google</a>
                                 </div>
                             </div>
                             <br />
                             <div className="row googleFB">
-                                <span>Don't have an account yet?</span><Link className='signInBtn waves-effect waves-light btn green accent-4' to='/register'>Sign Up</Link>
+                                <span>Don't have an account yet?</span><Link className='signInBtn waves-effect waves-light btn teal accent-4' to='/register'>Sign Up</Link>
                             </div>
                         </form>
                     </div>
@@ -102,6 +102,5 @@ class LoginPage extends Component {
         )
     }
 }
-
 
 export default connect(null, { signIn: signIn })(LoginPage);

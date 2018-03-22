@@ -4,6 +4,8 @@ import '../assets/css/camGame.css';
 import Chat from './chat';
 import CamGameWinModal from './camGameWinModal';
 import GameInfoModal from './gameInfoModal';
+import { connect } from 'react-redux';
+import { enterRoom } from "../actions";
 
 class CamGame extends Component {
     constructor(props) {
@@ -23,6 +25,10 @@ class CamGame extends Component {
         this.displayWinner = this.displayWinner.bind(this);
         this.closeWinModal = this.closeWinModal.bind(this);
         this.handleScoreInput = this.handleScoreInput.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.enterRoom();
     }
 
     handleScoreInput(event) {
@@ -69,39 +75,38 @@ class CamGame extends Component {
 
         return (
             <div className="webpage row">
-                <div className="col s3 score">
-                    <div className="row">
+                <div className="col l3 s4 score">
+                    <div className="row" id="scoreRow">
                         <div className="col s12 center-align">
-                            <div className="card contentBorder">
-                                <div className="card-content">
+                            <div className="card contentBorder scoreInfo">
+                                <div className="card-content" id="cardContainer">
                                     <div className="row">
-                                        <div className="col s6">
-                                            <h5>Team 1</h5>
+                                        <div className="col l6 s6">
+                                            <h5 className="teamText">Team 1</h5>
                                             <input id='teamOneScore' onChange={this.handleScoreInput} name='teamOneScore' value={teamOneScore} className="score" type="number" placeholder="Enter Score" />
                                         </div>
-                                        <div className="col s6">
-                                            <h5>Team 2</h5>
+                                        <div className="col l6 s6">
+                                            <h5 className="teamText">Team 2</h5>
                                             <input id='teamTwoScore' onChange={this.handleScoreInput} name='teamTwoScore' value={teamTwoScore} className="score" type="number" placeholder="Enter Score" />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div className="col s6 center-align">
-                                        <button onClick={this.displayInfo} className='btn light-blue accent-4 camGameBtn waves-effect waves-light'>Info</button>
+                                    <div className="col s6 center-align" id="infoBtn">
+                                        <button onClick={this.displayInfo} className='btn teal accent-4 camGameBtn waves-effect waves-light'>Room Info</button>
                                     </div>
-                                    <div className="col s6">
-                                        <button onClick={this.displayWinner} className='btn red accent-4 camGameBtn waves-effect waves-light' style={{ marginLeft: '8px' }}>End Game</button>
+                                    <div className="col s6 center-align" id="endGameBtn">
+                                        <button onClick={this.displayWinner} className="btn red accent-4 camGameBtn waves-effect waves-light">End Game</button>
                                     </div>
-
                                 </div>
                             </div>
-                            <div className="col s12 chatCam">
+                            <div className="col s12 chatCam" id="camChat">
                                 <Chat />
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="col s9">
+                <div className="col l9 s8">
                     <TokBox />
                 </div>
                 <GameInfoModal display={displayInfoModal} close={this.closeInfoModal} gameType='webcam' roomKey={this.roomKeyId} />
@@ -111,4 +116,4 @@ class CamGame extends Component {
     }
 }
 
-export default CamGame;
+export default connect(null, { enterRoom: enterRoom })(CamGame);

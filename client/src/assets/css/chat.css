@@ -1,14 +1,8 @@
 
-/* h2{
-    font-size: 18px;
-    padding: 10px 20px;
-    color: #575ed8;
-} */
-
 .lituation-chat{
     width: 100%;
-    height: 81%;
-    border-radius: 2px;
+    height: 94%;
+    border-radius: 25px 25px 0px 0px;
     box-sizing: border-box;
 }
 
@@ -17,11 +11,13 @@
 }
 
 #chat-window{
+    padding: 3%;
     height: 90%;
     overflow: auto;
     word-wrap: break-word;
-    background: #EBEBEB;
+    background: ghostwhite;
     text-align: left;
+    border-radius: 25px 25px 0px 0px;
 }
 
 #output p{
@@ -41,9 +37,8 @@
     color: #232320;
 }
 
-
 #message{
-    /* padding: 10px 20px; */
+    padding: 3%;
     box-sizing: border-box;
     background: #eee;
     border: 0;
@@ -51,19 +46,17 @@
     width: 100%;
     background: #fff;
     border-bottom: 1px solid #eee;
-    font-family: Nunito;
     font-size: 16px;
     margin: 0;
 }
 
 .chatBtn{
     width: 100%;
+    border-radius: 0px 0px 25px 25px;
 }
 
 input::-webkit-input-placeholder, 
 handle::-webkit-input-placeholder {
     font-family: 'Work Sans', sans-serif;
-
     color: darkgrey;
-
 }

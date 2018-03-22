@@ -10,8 +10,13 @@
 .chatCam{
     height: 60vh;
 }
+
+#camChat{
+    padding: 0;
+    height: 60vh;
+}
 .webpage{
-    height: 98vh;
+    height: 91.5vh;
     margin: 0;
 }
 
@@ -19,6 +24,106 @@
     text-align: center;
 }
 
+.scoreInfo{
+    height: 30%;
+}
+
+#scoreRow{
+    height: 89vh;
+    margin: 0;
+}
+
+#cardContainer{
+    padding: 5%;
+    height: 60%;
+}
+
+.teamText{
+    font-size: 18px;
+}
+
 .camGameBtn{
-    margin-bottom: 5vh;
+    font-size: 12px;
+    padding: 0 1.5rem;
+}
+
+#infoBtn{
+    padding-right: 0;
+}
+
+#endGameBtn{
+    padding-left: 0;
+}
+
+/* Media Queries */
+@media only screen and (max-height: 768px) {
+    .webpage{
+        height: 90.9vh;
+    }
+    #camChat{
+        height: 50vh;
+    }
+ 
+} 
+
+@media only screen and (min-height: 768px) and (max-height: 847px) {
+    .webpage{
+        height: 92vh;
+    }
+    #camChat{
+        height: 60vh;
+    }
+    .container{
+        width: 75%;
+    }
+}
+
+@media only screen and (min-height: 848px) and (max-height: 909px) {
+    .webpage{
+        height: 92.7vh;
+    }
+    .container{
+        width: 75%;
+    }
+}
+
+@media only screen and (min-height: 910px) {
+    .webpage{
+        height: 93.1vh;
+    }
+    .container{
+        width: 75%;
+    }
+}
+
+@media only screen and (min-height: 950px) {
+    .webpage{
+        height: 93.3vh;
+    }
+    #camChat{
+        height: 65vh;
+    }
+    .container{
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+   
+    .container{
+        width: 85%;
+    }
+} 
+
+@media only screen and (max-width: 988px) {
+   
+    .container{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    div#fullScreen > div > div > div > div.OT_subscriber{
+        width: 60vw !important; 
+    }
 }

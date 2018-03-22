@@ -3,14 +3,12 @@
     src: url('../fonts/crewniverse_font.ttf')
 }
 
-.title {
-    color: rgba(0,181,161,1); 
-    text-shadow: 1px 1px #008894, 
-                     2px 2px #008894, 
-                     3px 3px #008894, 
-                     4px 4px #008894, 
-                     5px 5px #008894, 
-                     6px 6px #008894;
+h3.title.center.center-align {
+    color: rgb(255, 123, 0);
+}
+
+h5.center.center-align{
+    color: rgb(255, 123, 0);
 }
 
 .titleLine{
@@ -25,34 +23,24 @@
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    text-shadow: 1px 1px #008894, 
-                     2px 2px #008894, 
-                     3px 3px #008894, 
-                     4px 4px #008894, 
-                     5px 5px #008894, 
-                     6px 6px #008894;
+    text-shadow: 5px 5px 10px rgb(182, 88, 0);
 }
 
 @keyframes floating {
-from { transform: translate(0,  0px); }
-65%  { transform: translate(0, 15px); }
-to   { transform: translate(0, -0px); }
-
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -0px); }
 }
 
 .mainDiv{
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .feature {
     font-size: 10vmin;
     color: rgba(0,181,161,1); 
-    text-shadow: 1px 1px #008894, 
-                     2px 2px #008894, 
-                     3px 3px #008894, 
-                     4px 4px #008894, 
-                     5px 5px #008894, 
-                     6px 6px #008894;
+    text-shadow: 4px 4px 6px rgb(128, 66, 9); 
+   
 }
 
 #fam{
@@ -62,6 +50,11 @@ to   { transform: translate(0, -0px); }
 
 .gameImage {
     height: 55vh;
+}
+
+#gameImage{
+    padding: 0;
+    border-radius: 15px;
 }
 
 .homepageLastRow {
@@ -77,5 +70,14 @@ to   { transform: translate(0, -0px); }
 .paragraphInHomePage {
     font-weight: 800;
     font-size: 2.25vmin;
+    padding-top:4%;
 }
 
+.paragraphTopHomePage{
+    font-weight: 800;
+    font-size: 2vmin;
+}
+
+#examplePlay{
+    height: 60vh;
+}

@@ -15,7 +15,7 @@ router.post('/login', function (req, res, next) {
             return next(err);
         }
         if (!user) {
-            return res.json({ messages: 'Not a valid combination, please try a different one!' });
+            return res.json({ messages: 'Invalid email or password, please try a different combination!' });
         }
         if (user) {
             req.logIn(user, function (err) {

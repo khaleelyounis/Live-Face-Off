@@ -22,5 +22,7 @@ passport.deserializeUser((id, done) => {
     const userInfo = id.split('-');
     User[userInfo[1]].findById(userInfo[0]).then(user => {
         done(null, user);
+    }).catch(err => {
+        console.log('error in .catch: ', err);
     });
 });

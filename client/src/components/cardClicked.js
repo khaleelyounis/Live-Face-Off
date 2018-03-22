@@ -5,12 +5,14 @@ import GameBoard from './gameBoard';
 class CardClicked extends Component {
     constructor(props) {
         super(props);
-        console.log('clicked status is ' + props.clickedStatus)
+
     }
 
     render() {
         return (
-            <div onClick={(event) => this.props.handleClick(event)} className={this.props.className} style={{ backgroundImage: "url(" + this.props.style + ")", opacity: this.props.clickedStatus ? .5 : 1 }} ></div>
+            <div style={{ opacity: this.props.clickedStatus ? .6 : 1 }} className="fullHand">
+                <img onClick={(event) => this.props.handleClick(event)} src={this.props.style} className={this.props.className} />
+            </div >
         )
     }
 }
