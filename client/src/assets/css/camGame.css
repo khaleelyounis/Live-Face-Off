@@ -56,12 +56,45 @@
 }
 
 /* Media Queries */
-@media only screen and (max-height: 768px) {
+@media only screen and (min-height: 100px) and (max-height: 500px) {
     .webpage{
-        height: 90.9vh;
+        height: 115vh;
+    }
+    .lituation-chat {
+        height: 45%;
+    }
+ 
+}
+
+@media only screen and (min-height: 501px) and  (max-height: 600px) {
+    .webpage{
+        height: 105vh;
+    }
+    .lituation-chat {
+        height: 45%;
+    }
+ 
+}
+
+@media only screen and (min-height: 600px) and (max-height: 659px) {
+    .webpage{
+        height: 100vh;
+    }
+    .lituation-chat {
+        height: 90%;
+    }
+ 
+}
+
+@media only screen and (min-height: 660px) and (max-height: 768px) {
+    .webpage{
+        height: 100vh;
     }
     #camChat{
         height: 50vh;
+    }
+    .lituation-chat {
+        height: 100%;
     }
  
 } 
@@ -75,6 +108,9 @@
     }
     .container{
         width: 75%;
+    }
+    .lituation-chat {
+        height: 75%;
     }
 }
 
